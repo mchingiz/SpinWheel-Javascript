@@ -29,13 +29,17 @@
 		
 		<button onclick="spin()">Spin!</button>
 		
+		<div id="resultLog">
+			
+		</div>
+		
 		<script>
 			
 			
 			var cache=0;
 			
 			function spin(){
-				
+				var p=document.createElement("p");
 
 				var random=Math.floor(((Math.random()*100+1)+100)*7); //Generating a random rotation degree to use between 101*7 and 200*7
 				document.getElementsByTagName("ul")[0].style.transform="rotate("+random+"deg)"; //Rotating
@@ -43,13 +47,16 @@
 				
 //Printing results
 				if( random%360<=60 ){
-					setTimeout( alert("jEdit"), 2200 );}
+					setTimeout( alert("jEdit"), 2200 );
+					var result=document.createTextNode("jEdit");
+				}
 				
 				else if( random%360<=120 ){
 					setTimeout( print, 2200 );
 					function print(){
 						alert("Phase 5");
 					}
+					var result=document.createTextNode("Phase 5");
 				}
 				
 				else if( random%360<=180 ){
@@ -57,6 +64,7 @@
 					function print(){
 						alert("Notepad++");
 					}
+					var result=document.createTextNode("Notepad++");
 				}
 				
 				else if( random%360<=240 ){
@@ -64,6 +72,7 @@
 					function print(){
 						alert("Atom");
 					}
+					var result=document.createTextNode("Atom");
 				}
 				
 				else if( random%360<=300 ){
@@ -71,6 +80,7 @@
 					function print(){
 						alert("Sublime Text");
 					}
+					var result=document.createTextNode("Sublime Text");
 				}
 				
 				else{
@@ -78,7 +88,11 @@
 					function print(){
 						alert("Brackets");
 					}
+					var result=document.createTextNode("Brackets");
 				}
+				
+				p.appendChild(result);
+				document.getElementById("resultLog").appendChild(p);
 			}
 			
 			
