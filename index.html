@@ -37,28 +37,48 @@
 			function spin(){
 				
 
-				var random=Math.floor(((Math.random()*100+1)+60)*7); //Generating a random rotation degree to use between 61*7 and 100*7
+				var random=Math.floor(((Math.random()*100+1)+100)*7); //Generating a random rotation degree to use between 101*7 and 200*7
 				document.getElementsByTagName("ul")[0].style.transform="rotate("+random+"deg)"; //Rotating
 				
 				
 //Printing results
 				if( random%360<=60 ){
-					console.log("jEdit");}
+					setTimeout( alert("jEdit"), 2200 );}
 				
 				else if( random%360<=120 ){
-					console.log("Phase 5");}
+					setTimeout( print, 2200 );
+					function print(){
+						alert("Phase 5");
+					}
+				}
 				
 				else if( random%360<=180 ){
-					console.log("Notepad++");}
+					setTimeout( print, 2200 );
+					function print(){
+						alert("Notepad++");
+					}
+				}
 				
 				else if( random%360<=240 ){
-					console.log("Atom");}
+					setTimeout( print, 2200 );
+					function print(){
+						alert("Atom");
+					}
+				}
 				
 				else if( random%360<=300 ){
-					console.log("Sublime Text");}
+					setTimeout( print, 2200 );
+					function print(){
+						alert("Sublime Text");
+					}
+				}
 				
 				else{
-					console.log("Brackets");}
+					setTimeout( print, 2200 );
+					function print(){
+						alert("Brackets");
+					}
+				}
 			}
 			
 			
